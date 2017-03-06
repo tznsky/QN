@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html>
-	<script type="text/javascript" src="js/Action.js" ></script>
+	<script type="text/javascript" src="js/Action.js"></script>
+	<script type="text/javascript">
+		function load() {
+			if(localStorage.name != null) {
+				document.getElementById("name").innerHTML = localStorage.name;
+			}
+			if(localStorage.exp != null) {
+				document.getElementById("exp").innerHTML = localStorage.exp;
+			}
+			if(localStorage.money != null) {
+				document.getElementById("money").innerHTML = localStorage.money;
+			}
+			if(localStorage.weapon != null) {
+				document.getElementById("weapon").innerHTML = localStorage.weapon;
+			}
+			if(localStorage.level != null) {
+				document.getElementById("level").innerHTML = localStorage.level;
+			}
+		}
+
+		function restart() {
+			localStorage.exp = 0;
+			localStorage.money = 0;
+			localStorage.weapon = "空手";
+			localStorage.level = 1;
+		}
+	</script>
+
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
 	</head>
-	<body>
-		<button onclick="FindMonster()">找怪</button>
+
+	<body onload="load()">
+		<span id="name">Is_how大魔王</span><br />
+		<span>等级:</span><span id="level">1</span><span>经验:</span><span id="exp">0</span><span>金钱:</span><span id="money">0</span><br />
+		<span>装备</span><br />
+		<span>武器：</span><span id="weapon">空手</span><br />
 		<button onclick="Shoping()">商店</button>
+		<button onclick="Kitbag()">背包</button>
+		<button onclick="ChoiceMap(1)">地图</button>
+		<button onclick="restart()">重玩</button>
 	</body>
+
 </html>

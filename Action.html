@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html>
 	<script type="text/javascript" src="js/Action.js"></script>
+	<script type="text/javascript">
+		function load() {
+			if(localStorage.name != null) {
+				document.getElementById("name").innerHTML = localStorage.name;
+			}
+			if(localStorage.exp != null) {
+				document.getElementById("exp").innerHTML = localStorage.exp;
+			}
+			if(localStorage.money != null) {
+				document.getElementById("money").innerHTML = localStorage.money;
+			}
+			if(localStorage.weapon != null) {
+				document.getElementById("weapon").innerHTML = localStorage.weapon;
+			}
+			if(localStorage.level != null) {
+				document.getElementById("level").innerHTML = localStorage.level;
+			}
+		}
+	</script>
 
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
 	</head>
 
-	<body>
+	<body onload="load()">
+		<span id="name">Is_how大魔王</span><br />
 		<span>生命:</span><span id="huoli">100</span><br />
 		<span>攻击:</span><span id="gongji">50</span><br />
 		<span>防御:</span><span id="fangyu">30</span><br />
+		<span id="Monstername">屎来姆</span><br />
 		<span>怪物生命:</span><span id="Monsterhuoli">100</span><br />
 		<span>怪物攻击:</span><span id="Monstergongji">10</span><br />
 		<span>怪物防御:</span><span id="Monsterfangyu">30</span><br />
 		<button onclick="Attackt()">攻击</button>
-		<button onclick="RunOff()">逃跑</button><br />
+		<button onclick="RunOff()">返回</button><br />
 
 		<span>等级:</span><span id="level">1</span><span>经验:</span><span id="exp">0</span><span>金钱:</span><span id="money">0</span>
-
+		<br />
+		<br />
+		<br />
+		<span>战斗信息:</span><span id="log-info"></span>
 	</body>
 
 </html>
